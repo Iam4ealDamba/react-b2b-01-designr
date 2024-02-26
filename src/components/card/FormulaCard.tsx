@@ -6,7 +6,16 @@ import LinkButton from "../button/LinkButton";
 
 // ||||||||||||||||||||||||||||| FormulaCard Component ||||||||||||||||||||||||||||||||||||
 
-const FormulaCard = ({ title, price, per, content, color, separator }) => {
+interface FormulaCardProps {
+  title: string;
+  price: string;
+  per: string;
+  content: string;
+  color: string;
+  separator: string;
+}
+
+const FormulaCard : React.FC<FormulaCardProps> = ({ title, price, per, content, color, separator }) => {
   // Return
   return (
     <div

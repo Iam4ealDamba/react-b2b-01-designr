@@ -24,9 +24,3 @@ html {
 html {
   overflow: -moz-scrollbars-none;
 }
-
-p,
-a,
-button {
-  @apply transition-all duration-300;
-}

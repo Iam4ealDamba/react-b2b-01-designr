@@ -41,7 +41,7 @@ const TarifsPage = () => {
           <div className="bottom grid grid-cols-3 gap-x-8 gap-y-10 px-20 max_2xl_3:grid-cols-2 max_lg_2:grid-cols-1 max_lg_2:px-6">
             <FormulaCard
               title={"Startup"}
-              price={15}
+              price={"15"}
               per={"mois"}
               content={
                 "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, vero ullam quo in architecto eius ex quidem consequuntur minus voluptatibus odio eum inventore nemo fugit non, modi dolores natus voluptas?"
@@ -51,7 +51,7 @@ const TarifsPage = () => {
             />
             <FormulaCard
               title={"Unlimited"}
-              price={50}
+              price={"50"}
               per={"mois"}
               content={
                 "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, vero ullam quo in architecto eius ex quidem consequuntur minus voluptatibus odio eum inventore nemo fugit non, modi dolores natus voluptas?"
@@ -61,7 +61,7 @@ const TarifsPage = () => {
             />
             <FormulaCard
               title={"Professionnal"}
-              price={30}
+              price={"30"}
               per={"mois"}
               content={
                 "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, vero ullam quo in architecto eius ex quidem consequuntur minus voluptatibus odio eum inventore nemo fugit non, modi dolores natus voluptas?"

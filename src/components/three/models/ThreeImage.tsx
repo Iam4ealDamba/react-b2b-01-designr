@@ -6,7 +6,9 @@ import { shaderMaterial } from "@react-three/drei";
 
 import * as THREE from "three";
 
+// @ts-ignore
 import imageVertex from "../shaders/image.vert";
+// @ts-ignore
 import imageFragment from "../shaders/image.frag";
 
 // ||||||||||||||||||||||||||||| Image Component ||||||||||||||||||||||||||||||||||||
@@ -23,9 +25,14 @@ extend({ ImageShaderMaterial });
 
 // ||||||||||||||||||||||||||||| Image Component ||||||||||||||||||||||||||||||||||||
 
-const Image = ({ active, url }) => {
+interface ImageProps {
+  active: boolean;
+  url: string;
+}
+
+const Image: React.FC<ImageProps> = ({ active, url }) => {
   // Hooks
-  const ref = useRef(null);
+  const ref = useRef<any>(null!);
   const [image] = useLoader(THREE.TextureLoader, [url]);
 
   useFrame(
@@ -36,6 +43,7 @@ const Image = ({ active, url }) => {
   return (
     <mesh>
       <planeGeometry args={[0.4, 0.6, 16, 16]} />
+      {/* @ts-ignore */}
       <imageShaderMaterial
         uColor={!active ? "#fff" : "#f00"}
         uTexture={image}

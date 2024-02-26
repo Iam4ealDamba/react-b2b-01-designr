@@ -2,17 +2,22 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import Image from "./models/Image";
+import ThreeImage from "./models/ThreeImage";
 
 // ||||||||||||||||||||||||||||| Scene Component ||||||||||||||||||||||||||||||||||||
 
-const Scene = ({ is_enter, url }) => {
+interface SceneProps {
+  is_enter: boolean;
+  url: string;
+}
+
+const Scene: React.FC<SceneProps> = ({ is_enter, url }) => {
   // Return
   return (
     <Canvas camera={{ fov: 7.5 }}>
       <pointLight position={[0, 10, 10]} />
       <Suspense fallback={null}>
-        <Image active={is_enter} url={url} />
+        <ThreeImage active={is_enter} url={url} />
       </Suspense>
     </Canvas>
   );

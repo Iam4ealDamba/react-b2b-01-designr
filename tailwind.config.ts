@@ -18,7 +18,7 @@ const config: Config = {
         tw_text_inactive: "#7F7F7F",
       },
       screens: {
-        max_2xl: { max: "1536px" }, 
+        max_2xl: { max: "1536px" },
         max_2xl_3: { max: "1366px" },
         max_xl: { max: "1280px" },
         max_lg: { max: "1024px" },

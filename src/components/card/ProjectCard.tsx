@@ -36,6 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, role, title }) => {
         onMouseEnter={() => setIsEnter(true)}
         onMouseLeave={() => setIsEnter(false)}
       >
+        {/*@ts-ignore*/}
         <Scene is_enter={is_enter} url={image} className={"brightness-50"} />
         <div
           className={`content absolute bottom-0 flex items-end justify-center w-full h-full left-1/2 -translate-x-1/2 pb-12 text-center transition-all duration-300 ${
