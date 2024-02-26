@@ -1,113 +1,186 @@
+"use client";
+
+// ||||||||||||||||||||||||||||| Dependances ||||||||||||||||||||||||||||||||||||
+
+import { useState, useEffect } from "react";
+import { MdDesignServices } from "react-icons/md";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function Home() {
+import LinkButton from "@/components/button/LinkButton";
+import StandardCard from "@/components/card/StandardCard";
+import ArticleCard from "@/components/card/ArticleCard";
+import Layout from "@/layout/";
+
+// ||||||||||||||||||||||||||||| HomePage Component ||||||||||||||||||||||||||||||||||||
+
+const HomePage = () => {
+  // Hooks
+  const [val, setVal] = useState();
+
+  // Functions
+  useEffect(() => {
+    // Enter some content here.
+  }, []);
+
+  // Return
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Layout>
+      <motion.main
+        aria-label="home-page"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="space-y-28 pb-32"
+      >
+        <section
+          aria-label="first"
+          className="relative w-full h-[100vh] flex justify-center items-center"
+        >
+          <div
+            aria-label="bg-gif"
+            className="absolute top-0 left- w-full h-full"
           >
-            By{" "}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={"/videos/home-bg.gif"}
+              alt="gif"
+              width={1920}
+              height={1080}
+              className="w-full h-full object-cover grayscale"
             />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+            <div
+              aria-label="filter"
+              className="absolute top-0 left-0 w-full h-full bg-black/65"
+            ></div>
+          </div>
+          <div className="relative w-full max-w-[1300px] flex flex-col mx-auto gap-y-10 max_2xl_3:px-20 max_lg:px-8">
+            <h1 className="max-w-[800px] text-7xl font-black max_md:text-5xl max_xs:text-4xl">
+              Agence Design Digital Assurant{" "}
+              <b className="text-tw_primary">La Réalisation De Vos Rêves</b>
+            </h1>
+            <p className="text-lg max-w-[600px] text-tw_text_inactive font-bold">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
+              magnam voluptatum? Voluptatibus.
+            </p>
+            <div className="button">
+              <LinkButton link={"/projects"} color="bg-tw_primary">
+                Nos Projets
+              </LinkButton>
+            </div>
+          </div>
+        </section>
+        <section
+          aria-label="second"
+          className="w-full max-w-[1300px] mx-auto flex justify-between max_2xl_3:flex-col max_2xl_3:items-center max_2xl_3:px-20 max_lg:px-8 max_2xl_3:space-y-10"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="left max_lg:mx-auto">
+            <div className="image">
+              <Image
+                src={
+                  "https://images.unsplash.com/photo-1550682290-d071c75759f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
+                }
+                alt="image"
+                width={500}
+                height={800}
+                className="bg-tw_text"
+              />
+            </div>
+          </div>
+          <div className="right max_2xl_3:flex max_2xl_3:flex-col max_2xl_3:items-center">
+            <div className="text max-w-[600px] flex flex-col gap-y-8 pb-16 max_2xl_3:max-w-[800px] max_2xl_3:text-center">
+              <h2 className="font-bold text-5xl text-tw_primary">
+                Qui Sommes Nous ?
+              </h2>
+              <p className="text-tw_text_inactive font-bold">
+                <b className="font-bold text-tw_primary">Desin.R Agency</b>{" "}
+                dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                enim in eros elementum.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Suspendisse varius enim in eros elementum.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius.
+              </p>
+            </div>
+            <div className="image max-w-[600px]  max_2xl_3:max-w-[800px]">
+              <Image
+                src={
+                  "https://images.unsplash.com/photo-1578991624414-276ef23a534f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1927&q=80"
+                }
+                alt="image"
+                width={800}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          aria-label="third"
+          className="w-full max-w-[1300px] mx-auto max_2xl_3:px-20 max_lg:px-10"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className="font-bold text-3xl max_2xl_3:text-center max_lg:text-2xl max_sm:text-xl">
+            <b className="text-tw_primary">Nos différents services</b> sont
+            adaptes à tout types de demandes dans le domaines UI/UX et
+            développement de sites web.{" "}
+            <b className="text-tw_primary">La qualités, le respect du budget</b>{" "}
+            ainsi que le temps mis pour cela{" "}
+            <b className="text-tw_primary">sont nos mots maîtres</b>
           </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        </section>
+        <section
+          aria-label="fourth"
+          className="w-full max-w-[1300px] mx-auto px-6"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="list grid grid-cols-4 place-items-center gap-x-4 max_xl:grid-cols-2 max_2xl_3:gap-y-10 max_md:grid-cols-1">
+            <StandardCard
+              icon={<MdDesignServices className="text-4xl" />}
+              color={"bg-tw_secondary text-tw_text"}
+              title={"Web Design"}
+              content={`Lorem ipsum dolor repellat magnam blanditiis deleniti vero. Molestias explicabo perferendis fuga ipsa optio quos non.`}
+            />
+            <StandardCard
+              icon={<MdDesignServices className="text-4xl" />}
+              color={"bg-tw_secondary text-tw_text"}
+              title={"Web Design"}
+              content={`Lorem ipsum dolor repellat magnam blanditiis deleniti vero. Molestias explicabo perferendis fuga ipsa optio quos non.`}
+            />
+            <StandardCard
+              icon={<MdDesignServices className="text-4xl" />}
+              color={"bg-tw_secondary text-tw_text"}
+              title={"Web Design"}
+              content={`Lorem ipsum dolor repellat magnam blanditiis deleniti vero. Molestias explicabo perferendis fuga ipsa optio quos non.`}
+            />
+            <StandardCard
+              icon={<MdDesignServices className="text-4xl" />}
+              color={"bg-tw_secondary text-tw_text"}
+              title={"Web Design"}
+              content={`Lorem ipsum dolor repellat magnam blanditiis deleniti vero. Molestias explicabo perferendis fuga ipsa optio quos non.`}
+            />
+          </div>
+        </section>
+        <section
+          aria-label="fifth"
+          className="w-full max-w-[1300px] mx-auto flex flex-col gap-y-16 max_2xl_3:px-8"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <h2 className="font-bold text-5xl max_2xl_3:text-center max_lg:text-4xl">
+            Quelques uns de <b className="text-tw_primary">nos articles</b>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="list grid grid-cols-3 place-items-center gap-y-10 max_2xl_3:gap-y-10 max_xl:grid-cols-2 max_lg_2:grid-cols-1">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <ArticleCard
+                key={index}
+                title="5 Principles of effect web design"
+                image="/blog.jpg"
+                tag="Design"
+                date="Mars 11, 2023"
+              />
+            ))}
+          </div>
+        </section>
+      </motion.main>
+    </Layout>
   );
-}
+};
+
+export default HomePage;

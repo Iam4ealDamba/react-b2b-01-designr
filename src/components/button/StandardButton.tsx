@@ -4,15 +4,17 @@ import { useState, useEffect } from "react";
 
 // ||||||||||||||||||||||||||||| StandardButton Component ||||||||||||||||||||||||||||||||||||
 
-const StandardButton = ({ onClick, children, color }) => {
-  // Hooks
-  const [val, setVal] = useState();
+interface StandardButtonProps {
+  onClick?: () => void;
+  children: React.ReactNode;
+  color?: string;
+}
 
-  // Functions
-  useEffect(() => {
-    // Enter some content here.
-  }, []);
-
+const StandardButton: React.FC<StandardButtonProps> = ({
+  onClick,
+  children,
+  color,
+}) => {
   // Return
   return (
     <button

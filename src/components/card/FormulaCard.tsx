@@ -27,10 +27,10 @@ const FormulaCard = ({ title, price, per, content, color, separator }) => {
       <div className="third pb-12">
         <p className="font-bold text-sm">{content}</p>
       </div>
-      <div className="forth px-10">
+      <div className="forth px-2 mx-auto">
         <LinkButton
           link={"/contact"}
-          color={"w-full bg-color_bg text-color_text"}
+          color={"w-full bg-tw_bg text-tw_text"}
         >
           Nous Contacter
         </LinkButton>

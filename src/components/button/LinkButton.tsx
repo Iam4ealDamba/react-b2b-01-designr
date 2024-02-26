@@ -5,7 +5,19 @@ import { useState, useEffect } from "react";
 
 // ||||||||||||||||||||||||||||| LinkButton Component ||||||||||||||||||||||||||||||||||||
 
-const LinkButton = ({ onClick, children, color, link }) => {
+interface LinkButtonProps {
+  onClick?: () => void;
+  children: React.ReactNode;
+  color?: string;
+  link: string;
+}
+
+const LinkButton: React.FC<LinkButtonProps> = ({
+  onClick,
+  children,
+  color,
+  link,
+}) => {
   // Hooks
   const [val, setVal] = useState();
 

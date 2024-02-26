@@ -35,7 +35,7 @@ const Image = ({ active, url }) => {
   // Return
   return (
     <mesh>
-      <planeBufferGeometry args={[0.4, 0.6, 16, 16]} />
+      <planeGeometry args={[0.4, 0.6, 16, 16]} />
       <imageShaderMaterial
         uColor={!active ? "#fff" : "#f00"}
         uTexture={image}
